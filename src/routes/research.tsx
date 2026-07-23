@@ -46,8 +46,8 @@ function ResearchPage() {
       });
       if (result.tool === "research") {
         setSummary(result.summary);
-        setInsights(result.insights.map((i) => `• ${i}`).join("\n"));
-        setRecommendations(result.recommendations.map((r) => `• ${r}`).join("\n"));
+        setInsights(result.insights.map((i: string) => `• ${i}`).join("\n"));
+        setRecommendations(result.recommendations.map((r: string) => `• ${r}`).join("\n"));
       }
     } catch (e: any) {
       toast.error(e?.message ?? "Generation failed");
