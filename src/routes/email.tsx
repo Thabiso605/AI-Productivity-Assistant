@@ -147,11 +147,11 @@ function EmailPage() {
               <Label htmlFor="body">Body</Label>
               <Textarea
                 id="body"
-                rows={14}
+                rows={24}
                 value={body}
                 onChange={(e) => setBody(e.target.value)}
                 placeholder="Generated email body will appear here"
-                className="font-sans"
+                className="font-sans min-h-[400px]"
               />
             </div>
           </div>
