@@ -13,12 +13,19 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
-const items = [
+type NavItem = {
+  title: string;
+  url: "/" | "/email" | "/planner" | "/research";
+  icon: typeof LayoutDashboard;
+  exact?: boolean;
+};
+
+const items: NavItem[] = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard, exact: true },
   { title: "Email Generator", url: "/email", icon: Mail },
   { title: "Task Planner", url: "/planner", icon: CalendarClock },
   { title: "Research Assistant", url: "/research", icon: BookOpen },
-] as const;
+];
 
 export function AppSidebar() {
   const pathname = useRouterState({ select: (r) => r.location.pathname });
